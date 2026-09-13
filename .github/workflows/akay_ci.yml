@@ -36,7 +36,7 @@ jobs:
       
       - name: create blob container
         run: |
-          az storage container create --name tfstate --account-name stterraformstate
+          az storage container create --name tfstate --account-name stterraformstatespy
 
   terraform_plan:
     name: TERRAFORM PLAN
