@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 jobs:
-  terraform_backend
+  terraform_backend:
     name: CREATE TERRAFORM BACKEND
     runs-on: ubuntu-latest
 
