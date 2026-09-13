@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   terraform_plan:
-    name: TERAFORM PLAN
+    name: TERRAFORM PLAN
     runs-on: ubuntu-latest
     # if: github.event_name == 'pull_request'
 
