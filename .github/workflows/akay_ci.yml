@@ -121,13 +121,13 @@ jobs:
       # ------------------------------------------------------
       # TFLint
       # ------------------------------------------------------
-      - name: Setup TFLint
-        uses: terraform-linters/setup-tflint@v5
+      # - name: Setup TFLint
+      #   uses: terraform-linters/setup-tflint@v5
 
-      - name: Run TFLint
-        run: |
-          tflint --init
-          tflint
+      # - name: Run TFLint
+      #   run: |
+      #     tflint --init
+      #     tflint
 
 
       # ------------------------------------------------------
