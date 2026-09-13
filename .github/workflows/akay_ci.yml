@@ -12,7 +12,7 @@ jobs:
   terraform_plan:
     name: TERRAFORM PLAN
     runs-on: ubuntu-latest
-    environment: dev
+    environment: DEV
     # if: github.event_name == 'pull_request'
 
     defaults:
