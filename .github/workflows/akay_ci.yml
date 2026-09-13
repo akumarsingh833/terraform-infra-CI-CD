@@ -1,7 +1,7 @@
 name: Terraform plan
 
 on:
-  
+
   pull_request:
     branches:
       - main
@@ -32,7 +32,7 @@ jobs:
 
       - name: create backend storage account
         run: |
-          az storage account create --name stterraformstate123 --resource-group rg-terraform-state --location eastus --sku Standard_LRS    
+          az storage account create --name stterraformstatespy --resource-group rg-terraform-state --location eastus --sku Standard_LRS    
       
       - name: create blob container
         run: |
