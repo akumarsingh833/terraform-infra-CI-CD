@@ -1,0 +1,43 @@
+name: Terraform plan
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  terraform_plan:
+    name: TERAFORM PLAN
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v3
+        
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          client-id: $ {{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: $ {{ secrets['AZURE_TENANT_ID'] }}
+          subscription-id: $ {{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.7.6
+
+      - name: Terraform Init
+        run: terraform init
+        
+      - name: Terraform Plan
+        run: terraform plan
+
+      - name: Terraform Plan Output
+        run: terraform plan -out=tfplan.binary
+    
+        
+        
+        
