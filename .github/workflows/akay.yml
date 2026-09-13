@@ -12,7 +12,7 @@ jobs:
   terraform_plan:
     name: TERAFORM PLAN
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
+    # if: github.event_name == 'pull_request'
     steps:
       - name: checkout code
         uses: actions/checkout@v3
